@@ -1,0 +1,23 @@
+
+API com Go e PostgreSQL
+
+C - creat
+R - read
+U - update
+D - delete
+
+A estrutura da nossa aplica��o vai ter 
+4 packages:
+
+1 - DB (conex�o com BD, fechar conex�o etc)
+2 - Configs (ler arquivo de config e carregar conf para nossa aplica��o)
+3 - Handlers (recebe e trata as chamadas da API)
+4 - Models (respons�vel por fazer as transa��es com BD)
+
+Obs: Handles recebe a request, para para models e executa transa��o com BD
+     como ler, atualizar, remover, salvar
+
+     criar repositório 
+     fazer push do código local para o repositorio criado (enviar)
+     fazer o pull ná máquina de casa (pegar)
+     como ver tempo de contribuição
