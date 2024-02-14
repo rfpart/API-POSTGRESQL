@@ -19,7 +19,7 @@ type DBConfig struct {
 	Database string
 }
 
-func init() { // sempre é chamada no start das aplicações
+func init() { // sempre é chamada no start das aplicações..
 	viper.SetDefault("api.port", "9000")
 	viper.SetDefault("datavase.host", "localhost")
 	viper.SetDefault("database.port", "5432")
