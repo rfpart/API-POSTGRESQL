@@ -1,5 +1,7 @@
 package configs
 
+import "github.com/spf13/viper"
+
 var cfg *config
 
 type config struct {
@@ -37,4 +39,27 @@ func load() error {
 
 	}
 
+	cfg = new(config)
+	cfg.API = APIConfig{
+		Port: viper.GetString("api.port"),
+	}
+
+	cfg.DB = DBConfig{
+		Host:     viper.GetString("database.host"),
+		Port:     viper.GetString("database.port"),
+		User:     viper.GetString("database.user"),
+		Pass:     viper.GetString("database.pass"),
+		Database: viper.GetString("database.name"),
+	}
+
+	return nil
+
+}
+
+func GetDb() DBConfig {
+	return cfg.DB
+}
+
+func GetServerPort() string {
+	return cfg.API.Port
 }
