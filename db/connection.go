@@ -4,7 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 
-	"github.com/aprendagolang/api-pgsql/configs"
+	configs "github.com/API-POSTGRESQL/config"
+	_ "github.com/lib/pq"
 )
 
 func OpenConnection() {
