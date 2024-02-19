@@ -14,7 +14,7 @@ A estrutura da nossa aplica��o vai ter
 3 - Handlers (recebe e trata as chamadas da API)
 4 - Models (respons�vel por fazer as transa��es com BD)
 
-Obs: Handles recebe a request, para para models e executa transa��o com BD
+Obs: Handles recebe a request, para models e executa transa��o com BD
      como ler, atualizar, remover, salvar
 
      criar repositório 
