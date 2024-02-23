@@ -44,9 +44,10 @@ func load() error { // retorna com error caso não consiga carregar as configura
 			return err // Retorna o erro.
 		}
 	}
-	cfg = new(config)
-	cfg.API = APIConfig{
-		Port: viper.GetString("api.port"),
+	cfg = new(config) // cria um ponteiro da struct
+
+	cfg.API = APIConfig{ // configura o campo API da variavel cfg com uma nova atribuição na estrutura APIconfig
+		Port: viper.GetString("api.port"), // atribui ao campo Port da struct APIconfig o valor que foi obtido pelo viper usando a chave api.port
 	}
 
 	cfg.DB = DBConfig{
