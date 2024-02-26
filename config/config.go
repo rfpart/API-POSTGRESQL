@@ -46,26 +46,26 @@ func load() error { // retorna com error caso não consiga carregar as configura
 	}
 	cfg = new(config) // cria um ponteiro da struct
 
-	cfg.API = APIConfig{ // configura o campo API da variavel cfg com uma nova atribuição na estrutura APIconfig
-		Port: viper.GetString("api.port"), // atribui ao campo Port da struct APIconfig o valor que foi obtido pelo viper usando a chave api.port
+	cfg.API = APIConfig{ // configura o campo API da variavel cfg com uma nova atribuição na estrutura APIConfig
+		Port: viper.GetString("api.port"), // Obtém a porta do arquivo de configuração usando Viper
 	}
 
-	cfg.DB = DBConfig{
-		Host:     viper.GetString("database.host"),
-		Port:     viper.GetString("database.port"),
-		User:     viper.GetString("database.user"),
-		Pass:     viper.GetString("database.pass"),
-		Database: viper.GetString("database.name"),
+	cfg.DB = DBConfig{ // configura o campo DB da variavel cfg com uma novas atribuições na estrutura DBConfig
+		Host:     viper.GetString("database.host"), // Obtém o host do arquivo de configuração usando Viper
+		Port:     viper.GetString("database.port"), // Obtém a porta do arquivo de configuração usando Viper
+		User:     viper.GetString("database.user"), // Obtém o usuário do arquivo de configuração usando Viper
+		Pass:     viper.GetString("database.pass"), // Obtém a senha do arquivo de configuração usando Viper
+		Database: viper.GetString("database.name"), // Obtém o nome do banco de dados do arquivo de configuração usando Viper
 	}
 
 	return nil
 
 }
 
-func GetDb() DBConfig {
+func GetDb() DBConfig { // retorna a configuração do banco de dados DBConfig
 	return cfg.DB
 }
 
-func GetServerPort() string {
+func GetServerPort() string { // retorna a porta do servidor armazenada em cfg.API.Port
 	return cfg.API.Port
 }
