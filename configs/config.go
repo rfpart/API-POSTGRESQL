@@ -36,7 +36,7 @@ func init() { // init sempre é chamada no start das aplicações (faz parte do 
 func load() error { // retorna com error caso não consiga carregar as configurações
 	viper.SetConfigName("config") // aqui o viper vai procurar pelo arquivo de nome "config"
 	viper.SetConfigType("toml")   // Define o tipo de configuração como TOML (Tom's Obvious, Minimal Language)
-	viper.AddConfigPath(".")      // Define o diretório atual como o local para procurar arquivos de configuração
+	viper.AddConfigPath(".")     // Define o diretório atual como o local para procurar arquivos de configuração
 	err := viper.ReadInConfig()   // o viper vai ler o arquivo de configuração e guardar o resultado em err
 	if err != nil {               // Verifica se o erro é diferente de nil(sem erro) para fazer o if abaixo, se for nill continua depois do return.
 		if _, ok := err.(viper.ConfigFileNotFoundError); !ok { //verifica se o erro err não é do tipo viper.ConfigFileNotFoundError.
