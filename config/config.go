@@ -29,7 +29,7 @@ func init() { // init sempre é chamada no start das aplicações (faz parte do 
 
 	// viper é um pacote que será usado para definir valores padrões para nossas configurações.
 	viper.SetDefault("api.port", "9000")           // define a chave api.port, e a porta padrao 9000 (porta onde a API fica escutando por requisições)
-	viper.SetDefault("datavase.host", "localhost") // Define o valor padrão para o host do banco de dados como "localhost"
+	viper.SetDefault("database.host", "localhost") // Define o valor padrão para o host do banco de dados como "localhost"
 	viper.SetDefault("database.port", "5432")      // Define o valor padrão para a porta do banco de dados como "5432"
 }
 
