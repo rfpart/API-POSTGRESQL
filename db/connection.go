@@ -1,4 +1,4 @@
-package db
+package db // este pacote é responsável pela conexão com banco de dados
 
 import (
 	"database/sql"
@@ -8,8 +8,8 @@ import (
 	_ "github.com/lib/pq"
 )
 
-func OpenConnection() (*sql.DB, error) {
-	conf := configs.GetDb()
+func OpenConnection() (*sql.DB, error) { // esta função abre a conexão com banco de dados
+	conf := configs.GetDb() // a variável conf recebe as configurações do banco de dados para poder conectar
 
 	sc := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
 		conf.Host, conf.Port, conf.User, conf.Pass, conf.Database)
