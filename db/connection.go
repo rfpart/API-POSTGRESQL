@@ -19,7 +19,7 @@ func OpenConnection() (*sql.DB, error) {
 		panic(err)
 	}
 
-	err = conn.Ping()
+	err = conn.Ping() //
 
 	return conn, err
 }
