@@ -16,7 +16,7 @@ func OpenConnection() (*sql.DB, error) { // esta função abre a conexão com ba
 
 	conn, err := sql.Open("postgres", sc) // sql.Open() abre uma nova conexão com o banco de dados PostgreSQL usando o driver "postgres"
 	if err != nil {
-		panic(err) // se houver um erro ao abrir a conexão, o programa será encerrado com uma mensagem de erro
+		panic(err) // panic é usado para interromper imediatamente o software se algo inesperado acontecer
 	}
 
 	err = conn.Ping() // Ping() verifica se a conexão com o banco de dados está funcionando corretamente
