@@ -19,7 +19,7 @@ func OpenConnection() (*sql.DB, error) { // esta função abre a conexão com ba
 		panic(err) // panic é usado para interromper imediatamente o software se algo inesperado acontecer
 	}
 
-	err = conn.Ping() // Ping() verifica se a conexão com o banco de dados está funcionando corretamente
+	err = conn.Ping() // testa a conexão com banco de dados, se a conexão for bem sucedida a variavel err será nil, caso contrário ela armazenará o erro que ocorreu 
 
 	return conn, err // retorna a conexão com o banco de dados e qualquer erro que possa ter ocorrido
 }
