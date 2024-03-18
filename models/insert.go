@@ -4,7 +4,7 @@ import (
 	"github.com/API-POSTGRESQL/db" // Importa o pacote db para interagir com o banco de dados
 )
 
-// Insert insere uma nova tarefa no banco de dados
+// Insert insere uma nova tarefa no banco de dados e retorna o id da nova tarefa
 func Insert(todo Todo) (id int64, err error) {
 	// Abre uma conexão com o banco de dados
 	conn, err := db.OpenConnection()
@@ -14,7 +14,7 @@ func Insert(todo Todo) (id int64, err error) {
 	defer conn.Close() // Fecha a conexão quando a função terminar, independentemente do resultado
 
 	// Define a instrução SQL para inserir uma nova tarefa na tabela 'todos'
-	sql := `INSERT INTO todos (title, description, done) VALUES ($1, $2, $3) RETURN id`
+	sql := `INSERT INTO todos (title, description, done) VALUES ($1, $2, $3) RETURNING id`
 
 	// Executa a instrução SQL, passando os valores correspondentes e escaneando o ID retornado
 	err = conn.QueryRow(sql, todo.Title, todo.Description, todo.Done).Scan(&id)
