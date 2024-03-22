@@ -18,7 +18,7 @@ func GetAll() (todos []Todo, err error) {
 	}
 	defer rows.Close() // Fecha o cursor quando a função terminar, independentemente do resultado
 
-	// Loop sobre os resultados da consulta
+	// Loop para escanear os valores das colunas de cada linha
 	for rows.Next() {
 		var todo Todo
 
