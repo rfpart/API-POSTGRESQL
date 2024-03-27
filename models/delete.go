@@ -15,3 +15,4 @@ func Delete(id int64) (int64, error) {
 
 	return res.RowsAffected()
 }
+
