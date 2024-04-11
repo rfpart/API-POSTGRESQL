@@ -9,7 +9,7 @@ D - delete
 A estrutura da nossa aplicacao vai ter 
 4 packages:
 
-1 - DB (conexao com BD, fechar conexao etc)
+1 - DB (conexao com BD, fechar conexao etc).
 2 - Config (ler arquivo de config e carregar as configuracoes para dentro da nossa aplicacao)
 3 - Handlers (recebe e trata as chamadas da API)
 4 - Models (responsavel por fazer as transacoes com BD)
