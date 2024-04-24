@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/API-POSTGRESQL/handlers"         // Importa os manipuladores de solicitação HTTP
-	"github.com/aprendagolang/api-pgsql/configs" // Importa as configurações do servidor
-	"github.com/go-chi/chi/v5"                   // Importa o roteador de solicitações HTTP
+	"github.com/API-POSTGRESQL/configs"  // Importa as configurações do servidor
+	"github.com/API-POSTGRESQL/handlers" // Importa os manipuladores de solicitação HTTP
+	"github.com/go-chi/chi/v5"           // Importa o roteador de solicitações HTTP
 )
 
 func main() {
@@ -21,7 +21,7 @@ func main() {
 
 	// Define as rotas e seus manipuladores correspondentes
 	r.Post("/", handlers.Create)       // Rota para criar um novo recurso
-	r.Put("/{id}", handlers.Update())  // Rota para atualizar um recurso existente
+	r.Put("/{id}", handlers.Update)    // Rota para atualizar um recurso existente
 	r.Delete("/{id}", handlers.Delete) // Rota para excluir um recurso existente
 	r.Get("/", handlers.List)          // Rota para obter todos os recursos
 	r.Get("/{id}", handlers.Get)       // Rota para obter um recurso específico

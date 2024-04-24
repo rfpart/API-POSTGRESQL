@@ -7,6 +7,7 @@ import (
 	"strconv"
 
 	"github.com/API-POSTGRESQL/models"
+	"github.com/go-chi/chi/v5"
 )
 
 // Delete manipula solicitações DELETE para remover um recurso

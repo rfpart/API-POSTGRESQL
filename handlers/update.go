@@ -7,6 +7,7 @@ import (
 	"strconv"
 
 	"github.com/API-POSTGRESQL/models" // Importa o pacote models para interagir com o banco de dados
+	"github.com/go-chi/chi/v5"
 )
 
 // Update manipula solicitações PUT para atualizar um recurso
